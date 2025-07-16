@@ -22,6 +22,23 @@ The Skill Gap Analyzer is an AI-powered career development platform that helps u
 - Use composition over inheritance
 - Implement proper component lifecycle management
 
+### File Size and Separation of Concerns
+
+- Keep files small and focused (max 200-300 lines)
+- Separate concerns into different files and modules
+- Extract complex logic into custom hooks or utility functions
+- Split large components into smaller, composable pieces
+- Create separate files for types, constants, and utilities
+- Use barrel exports (index.ts) to organize related modules
+
+### Function Complexity
+
+- Keep function complexity low (max cyclomatic complexity of 11)
+- Break down complex functions into smaller, focused functions
+- Use early returns to reduce nesting levels
+- Extract conditional logic into separate functions when appropriate
+- Prefer pure functions over functions with side effects
+
 ### Design System
 
 - Use Radix UI primitives as the foundation for all interactive components
