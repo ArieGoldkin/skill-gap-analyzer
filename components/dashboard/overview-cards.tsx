@@ -1,14 +1,14 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { TrendingUp, Target, BookOpen, Award } from "lucide-react";
-import { mockSkillGapAnalysis, mockSkills } from "@/lib/mock-data";
-import { formatPercentage } from "@/lib/utils";
-import "./overview-cards.css";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
+import { TrendingUp, Target, BookOpen, Award } from 'lucide-react';
+import { mockSkillGapAnalysis, mockSkills } from '@/lib/mock-data';
+import { formatPercentage } from '@/lib/utils';
+import './overview-cards.css';
 
 export function OverviewCards() {
   const analysis = mockSkillGapAnalysis;
   const skillsInProgress = mockSkills.filter(
-    (skill) => skill.currentLevel < skill.targetLevel
+    skill => skill.currentLevel < skill.targetLevel
   ).length;
   const averageProgress =
     mockSkills.reduce((acc, skill) => acc + skill.currentLevel, 0) /

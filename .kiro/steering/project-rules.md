@@ -62,12 +62,63 @@ components/
 └── shared/       # Reusable business components
 ```
 
+### Project Structure Documentation
+
+- **ALWAYS update** `.kiro/steering/project-structure.md` when making structural changes
+- Document new directories, files, or organizational changes immediately
+- Include purpose and usage guidelines for new components or modules
+- Update file organization diagrams and examples
+- Maintain consistency between actual structure and documentation
+- Review structure documentation during code reviews
+- Structure changes include:
+  - Adding new directories or major files
+  - Moving files between directories
+  - Changing naming conventions
+  - Adding new component categories
+  - Modifying build or configuration structure
+
 ### State Management
 
-- Use React hooks for local state
-- Implement Context API for global state when needed
-- Consider Zustand for complex state management
+#### Local State
+
+- Use React hooks (useState, useReducer) for component-level state
 - Keep state as close to where it's used as possible
+- Use custom hooks to encapsulate stateful logic
+
+#### Global State
+
+- Implement Context API for simple global state (theme, user preferences)
+- Consider Zustand for complex client-side state management
+- Avoid prop drilling by lifting state appropriately
+
+#### Server State Management
+
+- **Use TanStack Query (@tanstack/react-query) for all server state management**
+- Implement proper query keys and query functions
+- Leverage built-in caching, background updates, and error handling
+- Use mutations for data modifications (POST, PUT, DELETE operations)
+- Implement optimistic updates where appropriate
+- Configure proper stale times and cache times based on data volatility
+
+#### TanStack Query Best Practices
+
+- **Query Organization**: Group related queries in custom hooks (e.g., `useSkillsData`, `useUserProfile`)
+- **Query Keys**: Use consistent, hierarchical query key patterns (`['skills', userId]`, `['assessments', skillId]`)
+- **Error Handling**: Implement global error boundaries and query-specific error states
+- **Loading States**: Use `isLoading`, `isFetching`, and `isError` states appropriately
+- **Mutations**: Always invalidate related queries after successful mutations
+- **Offline Support**: Configure retry logic and offline behavior for critical queries
+- **DevTools**: Use TanStack Query DevTools in development for debugging
+
+#### Data Flow Architecture
+
+```
+API Layer (lib/api/) → TanStack Query → React Components
+                   ↓
+              Custom Hooks (hooks/queries/)
+                   ↓
+           Component State (useState/useReducer)
+```
 
 ### Performance Guidelines
 

@@ -1,8 +1,8 @@
-import "./globals.css";
+import './globals.css';
 
 export const metadata = {
-  title: "Skill Gap Analyzer",
-  description: "AI-powered career development and skill optimization platform",
+  title: 'Skill Gap Analyzer',
+  description: 'AI-powered career development and skill optimization platform',
 };
 
 export default function RootLayout({

@@ -31,13 +31,13 @@
   box-shadow: 0 0 0 2px var(--color-ring);
 }
 
-.tabs-trigger[data-state="active"] {
+.tabs-trigger[data-state='active'] {
   background-color: var(--color-background);
   color: var(--color-foreground);
   box-shadow: var(--shadow-sm);
 }
 
-.tabs-trigger:hover:not([data-state="active"]) {
+.tabs-trigger:hover:not([data-state='active']) {
   color: var(--color-foreground);
 }
 

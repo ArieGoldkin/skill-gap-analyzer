@@ -189,9 +189,9 @@ Each feature area has its own directory with components and styles:
 
 ```tsx
 // Component imports
-import * as RadixPrimitive from "@radix-ui/react-*";
-import { cn } from "@/lib/utils";
-import "./component-name.css";
+import * as RadixPrimitive from '@radix-ui/react-*';
+import { cn } from '@/lib/utils';
+import './component-name.css';
 
 // Component implementation with Radix UI
 const Component = () => {

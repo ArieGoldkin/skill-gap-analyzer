@@ -59,19 +59,19 @@
   box-shadow: var(--shadow-lg);
 }
 
-.select-content--popper[data-side="bottom"] {
+.select-content--popper[data-side='bottom'] {
   transform: translateY(0.25rem);
 }
 
-.select-content--popper[data-side="left"] {
+.select-content--popper[data-side='left'] {
   transform: translateX(-0.25rem);
 }
 
-.select-content--popper[data-side="right"] {
+.select-content--popper[data-side='right'] {
   transform: translateX(0.25rem);
 }
 
-.select-content--popper[data-side="top"] {
+.select-content--popper[data-side='top'] {
   transform: translateY(-0.25rem);
 }
 

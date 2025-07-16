@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { OverviewCards } from "@/components/dashboard/overview-cards";
-import { SkillsOverview } from "@/components/dashboard/skills-overview";
-import { SkillAssessment } from "@/components/assessment/skill-assessment";
-import { LearningPath } from "@/components/learning/learning-path";
-import { AIPromptHelper } from "@/components/ai/ai-prompt-helper";
-import { Brain, BarChart3, Target, BookOpen } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { OverviewCards } from '@/components/dashboard/overview-cards';
+import { SkillsOverview } from '@/components/dashboard/skills-overview';
+import { SkillAssessment } from '@/components/assessment/skill-assessment';
+import { LearningPath } from '@/components/learning/learning-path';
+import { AIPromptHelper } from '@/components/ai/ai-prompt-helper';
+import { Brain, BarChart3, Target, BookOpen } from 'lucide-react';
 
 export default function Home() {
   return (

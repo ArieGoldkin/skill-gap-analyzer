@@ -4,17 +4,17 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
-import { TrendingUp, TrendingDown, Minus } from "lucide-react";
-import { mockSkills } from "@/lib/mock-data";
+} from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
+import { Badge } from '@/components/ui/badge';
+import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import { mockSkills } from '@/lib/mock-data';
 import {
   calculateSkillGap,
   getGapSeverity,
   formatPercentage,
-} from "@/lib/utils";
-import "./skills-overview.css";
+} from '@/lib/utils';
+import './skills-overview.css';
 
 export function SkillsOverview() {
   return (
@@ -26,16 +26,16 @@ export function SkillsOverview() {
         </CardDescription>
       </CardHeader>
       <CardContent className="skills-content">
-        {mockSkills.map((skill) => {
+        {mockSkills.map(skill => {
           const gap = calculateSkillGap(skill.currentLevel, skill.targetLevel);
           const gapSeverity = getGapSeverity(gap);
 
           const TrendIcon =
-            skill.trendDirection === "up"
+            skill.trendDirection === 'up'
               ? TrendingUp
-              : skill.trendDirection === "down"
-              ? TrendingDown
-              : Minus;
+              : skill.trendDirection === 'down'
+                ? TrendingDown
+                : Minus;
 
           return (
             <div key={skill.id} className="skill-item">
@@ -63,11 +63,11 @@ export function SkillsOverview() {
                   <div className="skill-gap">
                     <Badge
                       variant={
-                        gapSeverity === "high"
-                          ? "destructive"
-                          : gapSeverity === "medium"
-                          ? "default"
-                          : "secondary"
+                        gapSeverity === 'high'
+                          ? 'destructive'
+                          : gapSeverity === 'medium'
+                            ? 'default'
+                            : 'secondary'
                       }
                       className="gap-badge"
                     >

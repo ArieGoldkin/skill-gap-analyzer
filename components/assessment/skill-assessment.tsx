@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Slider } from "@/components/ui/slider";
-import { Badge } from "@/components/ui/badge";
-import { mockSkills } from "@/lib/mock-data";
-import { getSkillLevel } from "@/lib/utils";
-import "./skill-assessment.css";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Slider } from '@/components/ui/slider';
+import { Badge } from '@/components/ui/badge';
+import { mockSkills } from '@/lib/mock-data';
+import { getSkillLevel } from '@/lib/utils';
+import './skill-assessment.css';
 
 export function SkillAssessment() {
   const [assessmentData, setAssessmentData] = useState(
@@ -25,14 +25,14 @@ export function SkillAssessment() {
   );
 
   const handleSkillChange = (skillId: string, value: number[]) => {
-    setAssessmentData((prev) => ({
+    setAssessmentData(prev => ({
       ...prev,
       [skillId]: value[0],
     }));
   };
 
   const handleSaveAssessment = () => {
-    console.log("Saving assessment:", assessmentData);
+    console.log('Saving assessment:', assessmentData);
     // Here you would typically send the data to your backend
   };
 
@@ -46,7 +46,7 @@ export function SkillAssessment() {
         </CardDescription>
       </CardHeader>
       <CardContent className="assessment-content">
-        {mockSkills.map((skill) => {
+        {mockSkills.map(skill => {
           const currentValue = assessmentData[skill.id];
           const skillLevel = getSkillLevel(currentValue);
 
@@ -65,7 +65,7 @@ export function SkillAssessment() {
 
               <Slider
                 value={[currentValue]}
-                onValueChange={(value) => handleSkillChange(skill.id, value)}
+                onValueChange={value => handleSkillChange(skill.id, value)}
                 max={100}
                 step={5}
                 className="assessment-slider"

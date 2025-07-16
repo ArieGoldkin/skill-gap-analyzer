@@ -4,13 +4,13 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { Clock, BookOpen, Award, ExternalLink } from "lucide-react";
-import { mockLearningPaths } from "@/lib/mock-data";
-import "./learning-path.css";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
+import { Clock, BookOpen, Award, ExternalLink } from 'lucide-react';
+import { mockLearningPaths } from '@/lib/mock-data';
+import './learning-path.css';
 
 export function LearningPath() {
   const learningPath = mockLearningPaths[0]; // Using first path as example
@@ -59,8 +59,8 @@ export function LearningPath() {
                   <div
                     className={`milestone-number ${
                       milestone.completed
-                        ? "milestone-number--completed"
-                        : "milestone-number--pending"
+                        ? 'milestone-number--completed'
+                        : 'milestone-number--pending'
                     }`}
                   >
                     {index + 1}
@@ -98,7 +98,7 @@ export function LearningPath() {
           </CardDescription>
         </CardHeader>
         <CardContent className="resources-content">
-          {learningPath.resources.map((resource) => (
+          {learningPath.resources.map(resource => (
             <div key={resource.id} className="resource-item">
               <div className="resource-info">
                 <h4 className="resource-title">{resource.title}</h4>
@@ -111,7 +111,7 @@ export function LearningPath() {
                     {resource.type}
                   </Badge>
                   <Badge
-                    variant={resource.cost === "free" ? "secondary" : "default"}
+                    variant={resource.cost === 'free' ? 'secondary' : 'default'}
                     className="resource-cost"
                   >
                     {resource.cost}

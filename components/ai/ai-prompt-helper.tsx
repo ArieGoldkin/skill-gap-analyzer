@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Copy,
   Sparkles,
@@ -9,14 +9,14 @@ import {
   BookOpen,
   Check,
   ChevronDown,
-} from "lucide-react";
-import "./ai-prompt-helper.css";
+} from 'lucide-react';
+import './ai-prompt-helper.css';
 
 const promptTemplates = [
   {
-    id: "skill-analysis",
-    title: "Skill Gap Analysis",
-    description: "Analyze current skills vs market demands",
+    id: 'skill-analysis',
+    title: 'Skill Gap Analysis',
+    description: 'Analyze current skills vs market demands',
     icon: Target,
     template: `Analyze my skill profile and provide insights:
 
@@ -37,9 +37,9 @@ Please provide:
 4. Estimated timeline to reach proficiency goals`,
   },
   {
-    id: "learning-path",
-    title: "Personalized Learning Path",
-    description: "Generate custom learning roadmaps",
+    id: 'learning-path',
+    title: 'Personalized Learning Path',
+    description: 'Generate custom learning roadmaps',
     icon: BookOpen,
     template: `Create a personalized learning path for:
 
@@ -58,9 +58,9 @@ Please provide:
 5. Assessment methods to track progress`,
   },
   {
-    id: "market-trends",
-    title: "Market Trend Analysis",
-    description: "Get insights on skill market demand",
+    id: 'market-trends',
+    title: 'Market Trend Analysis',
+    description: 'Get insights on skill market demand',
     icon: TrendingUp,
     template: `Provide market analysis for these skills:
 
@@ -81,9 +81,9 @@ Please analyze:
 5. Geographic demand variations`,
   },
   {
-    id: "career-guidance",
-    title: "Career Path Guidance",
-    description: "Strategic career development advice",
+    id: 'career-guidance',
+    title: 'Career Path Guidance',
+    description: 'Strategic career development advice',
     icon: Sparkles,
     template: `Provide career guidance based on my profile:
 
@@ -108,12 +108,12 @@ Please advise on:
 ];
 
 export function AIPromptHelper() {
-  const [customPrompt, setCustomPrompt] = useState<string>("");
-  const [copiedTemplate, setCopiedTemplate] = useState<string>("");
+  const [customPrompt, setCustomPrompt] = useState<string>('');
+  const [copiedTemplate, setCopiedTemplate] = useState<string>('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleTemplateSelect = (templateId: string) => {
-    const template = promptTemplates.find((t) => t.id === templateId);
+    const template = promptTemplates.find(t => t.id === templateId);
     if (template) {
       setCustomPrompt(template.template);
       setIsDropdownOpen(false);
@@ -124,9 +124,9 @@ export function AIPromptHelper() {
     try {
       await navigator.clipboard.writeText(text);
       setCopiedTemplate(templateId);
-      setTimeout(() => setCopiedTemplate(""), 2000);
+      setTimeout(() => setCopiedTemplate(''), 2000);
     } catch (err) {
-      console.error("Failed to copy text: ", err);
+      console.error('Failed to copy text: ', err);
     }
   };
 
@@ -144,7 +144,7 @@ export function AIPromptHelper() {
 
         {/* Template Cards Grid */}
         <div className="templates-grid">
-          {promptTemplates.map((template) => {
+          {promptTemplates.map(template => {
             const IconComponent = template.icon;
             return (
               <div key={template.id} className="template-card">
@@ -217,14 +217,14 @@ export function AIPromptHelper() {
                 </span>
                 <ChevronDown
                   className={`dropdown-icon ${
-                    isDropdownOpen ? "dropdown-icon--open" : ""
+                    isDropdownOpen ? 'dropdown-icon--open' : ''
                   }`}
                 />
               </button>
 
               {isDropdownOpen && (
                 <div className="dropdown-menu">
-                  {promptTemplates.map((template) => (
+                  {promptTemplates.map(template => (
                     <button
                       key={template.id}
                       onClick={() => handleTemplateSelect(template.id)}
@@ -247,7 +247,7 @@ export function AIPromptHelper() {
               <textarea
                 placeholder="Your customized AI prompt will appear here..."
                 value={customPrompt}
-                onChange={(e) => setCustomPrompt(e.target.value)}
+                onChange={e => setCustomPrompt(e.target.value)}
                 className="prompt-textarea"
               />
             </div>
@@ -255,11 +255,11 @@ export function AIPromptHelper() {
             {/* Action Buttons */}
             <div className="editor-actions">
               <button
-                onClick={() => copyToClipboard(customPrompt, "custom")}
+                onClick={() => copyToClipboard(customPrompt, 'custom')}
                 disabled={!customPrompt.trim()}
                 className="copy-prompt-btn"
               >
-                {copiedTemplate === "custom" ? (
+                {copiedTemplate === 'custom' ? (
                   <>
                     <Check className="icon-sm" />
                     Copied!
@@ -271,7 +271,7 @@ export function AIPromptHelper() {
                   </>
                 )}
               </button>
-              <button onClick={() => setCustomPrompt("")} className="clear-btn">
+              <button onClick={() => setCustomPrompt('')} className="clear-btn">
                 Clear
               </button>
             </div>
@@ -284,27 +284,27 @@ export function AIPromptHelper() {
           <div className="tips-grid">
             {[
               {
-                title: "Be Specific",
+                title: 'Be Specific',
                 description:
-                  "Replace placeholders like [SKILL_NAME] with your actual skills and goals",
-                color: "tip--blue",
+                  'Replace placeholders like [SKILL_NAME] with your actual skills and goals',
+                color: 'tip--blue',
               },
               {
-                title: "Include Context",
+                title: 'Include Context',
                 description:
-                  "Add your industry, experience level, and career aspirations",
-                color: "tip--purple",
+                  'Add your industry, experience level, and career aspirations',
+                color: 'tip--purple',
               },
               {
-                title: "Ask Follow-ups",
+                title: 'Ask Follow-ups',
                 description:
-                  "Request clarification or deeper analysis on specific points",
-                color: "tip--green",
+                  'Request clarification or deeper analysis on specific points',
+                color: 'tip--green',
               },
               {
-                title: "Update Regularly",
-                description: "Reassess your skills and goals every few months",
-                color: "tip--orange",
+                title: 'Update Regularly',
+                description: 'Reassess your skills and goals every few months',
+                color: 'tip--orange',
               },
             ].map((tip, index) => (
               <div key={index} className="tip-item">
