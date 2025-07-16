@@ -1,0 +1,79 @@
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 500;
+  margin: 0;
+}
+
+.skill-category {
+  font-size: 0.75rem;
+}
+
+.skill-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.trend-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--color-muted-foreground);
+}
+
+.trend-text {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+}
+
+.skill-levels {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+.skill-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.progress-bar {
+  height: 0.5rem;
+}
+
+.skill-gap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gap-badge {
+  font-size: 0.75rem;
+}
+
+.gap-priority {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+}
